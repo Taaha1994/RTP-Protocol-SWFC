@@ -972,8 +972,8 @@ body {
       <label class="score-item" data-domain="6" data-pts="1">
         <input type="checkbox" />
         <div class="item-text">
-          <div class="item-label">I-PRRS or ACL-RSI score ≥ 56/100</div>
-          <div class="item-sub">Validated psychological readiness scale (Glazer 2009; validated in 29 Premier League clubs)</div>
+          <div class="item-label">I-PRRS score ≥ 50/60</div>
+          <div class="item-sub">Injury Psychological Readiness to Return to Sport scale (Glazer 2009). Scored out of 60 — threshold ≥ 50 indicates readiness. Validated across elite football populations</div>
         </div>
         <div class="item-pts">+1</div>
       </label>
@@ -994,8 +994,8 @@ body {
         <div class="item-pts">+1</div>
       </label>
       <div class="field" style="margin-top:2px">
-        <label>I-PRRS / ACL-RSI Score (if measured)</label>
-        <input type="number" id="iprrsScore" placeholder="0–100" min="0" max="100" />
+        <label>I-PRRS Score</label>
+        <input type="number" id="iprrsScore" placeholder="0–60" min="0" max="60" />
       </div>
     </div>
   </div>
@@ -1305,7 +1305,7 @@ Injury:               ${inj}
 Assessment Date:      ${dateStr}
 Days Since Injury:    ${ds}
 Physio Sessions:      ${ps}
-Team Sessions:        ${ts}${lsi?'\nLSI %:                '+lsi+'%':''}${iprrs?'\nI-PRRS Score:         '+iprrs:''}
+Team Sessions:        ${ts}${lsi?'\nLSI %:                '+lsi+'%':''}${iprrs?'\nI-PRRS Score:         '+iprrs+' / 60':''}
 
 DOMAIN SCORES
 ${'─'.repeat(46)}
@@ -1543,7 +1543,7 @@ function openPrintView() {
   <div class="meta-cell"><div class="meta-label">Physio Sessions</div><div class="meta-val">${ps||'—'}</div></div>
   <div class="meta-cell"><div class="meta-label">Team Sessions</div><div class="meta-val">${ts||'—'}</div></div>
   ${lsi?`<div class="meta-cell"><div class="meta-label">LSI %</div><div class="meta-val">${lsi}%</div></div>`:''}
-  ${iprrs?`<div class="meta-cell"><div class="meta-label">I-PRRS Score</div><div class="meta-val">${iprrs} / 100</div></div>`:''}
+  ${iprrs?`<div class="meta-cell"><div class="meta-label">I-PRRS Score</div><div class="meta-val">${iprrs} / 60</div></div>`:''}
   ${clinician?`<div class="meta-cell"><div class="meta-label">Clinician</div><div class="meta-val">${clinician}</div></div>`:''}
 </div>
 
